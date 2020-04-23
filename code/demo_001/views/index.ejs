@@ -32,7 +32,7 @@
                 <td><%= user.gender %></td>
                 <td>
                     <a href="/user/edit?id=<%= user.id %>">修改</a>
-                    <a href="/user/del?id=<%= user.id %>">删除</a>
+                    <a href="/user/del/<%= user.id %>">删除</a>
                 </td>
             </tr>
         <% } %>

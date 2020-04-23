@@ -69,8 +69,12 @@ sequelize.sync() // 生成数据表
     $ npm i -s koa koa-views @koa/router koa-bodyparser
     $ npm i -s ejs sequelize mysql2
 
+> 各个库的版本号为：
+@koa/router: ^9.0.0, better-npm-run: ^0.1.1，ejs: ^3.0.2，koa: ^2.11.0，koa-views：^6.2.1，sequelize：^5.21.6，koa-bodyparser：^4.3.0，koa-static：^5.0.0，mysql2：^2.1.0，nodemon：^2.0.3
+
 添加 npm scripts 到 package.json：
 
+```Json
     "scripts": {
       "start": "npm run dev",
       "dev": "better-npm-run dev",
@@ -90,6 +94,7 @@ sequelize.sync() // 生成数据表
         "command": "pm2 start app.js"
       }
     },
+```
 
 ### 实现 view 层
 新建 app.js 
@@ -175,7 +180,7 @@ view 层核心代码：
                 <td><%= user.gender %></td>
                 <td>
                     <a href="/user/edit?id=<%= user.id %>">修改</a>
-                    <a href="/user/del?id=<%= user.id %>">删除</a>
+                    <a href="/user/del/<%= user.id %>">删除</a>
                 </td>
             </tr>
         <% } %>
@@ -319,24 +324,181 @@ app.use(indexRouter.routes(), indexRouter.allowedMethods());
 
 打开浏览器输入 http://localhost:3000
 
-看到这两个页面说明已经成功了
+到此为止，页面已经可以访问了
 
-![查询页面](http://xinglong.tech/access/001_微信截图_20200423173714.png)
-![新增页面](http://xinglong.tech/access/001_微信图片_20200423173813.png)
-
+![查询页面](http://xinglong.tech/access/001/001_微信截图_20200423173714.png)
+![新增页面](http://xinglong.tech/access/001/001_微信图片_20200423173813.png)
 
 ## 实现 module 层
 
-连接数据库
-创建 module
-联调 曾
-联调 查
-联调 改
-联调 删
+新建 module 目录结构
+```
+  demo_001
+  ├── config
+  │   ├── dev.js
+  │   ├── prd.js
+  │   └── index.js
+  ├── modules
+  │   └── user.js
+  ├── router
+  ├── views
+  ├── db.js
+  ├── app.json
+  └── package.json
+```
 
-### 总结
-### 后记，联系我
+我们先要配置数据库连接：
 
 ```javascript
-
+// config/index.js
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./prd')
+} else {
+    module.exports = require('./dev')
+}
 ```
+dev 和 prd 分别对应不同环境的数据库连接。这里都写成你自己的数据库地址即可
+```javascript
+// config/prd.js, config/dev.js
+module.exports = {
+    db: {
+        // host
+        host: '127.0.0.1',
+        // 数据库名
+        dbName: 'xxxx',
+        // 用户名
+        username: 'xxxx',
+        // 密码
+        password: 'xxxx'
+    }
+}
+```
+
+连接数据库 db.js
+
+```javascript
+// db.js
+const Sequelize = require('sequelize');
+const config = require('./config')
+
+const { dbName, username, password, host } = config.db;
+
+const sequelise = new Sequelize(
+    dbName,
+    username, password,
+    {
+        host: host,
+        dialect: 'mysql',
+        // 配置连接池
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        }
+})
+
+sequelise
+    .authenticate()
+    .then(() => {
+        console.log('数据库连接成功')
+    })
+    .catch(err => {
+        throw new Error('数据库连接失败', err)
+    })
+
+module.exports = sequelise
+```
+创建 module
+
+```javascript
+// modules/user.js
+const Sequelize = require('sequelize')
+
+const sequelize = require('../db');
+
+const User = sequelize.define('user', {
+    username: { type: Sequelize.STRING },
+    pwd: { type: Sequelize.STRING, },
+    phone: { type: Sequelize.STRING, },
+    age: { type: Sequelize.STRING, },
+    gender: { type: Sequelize.INTEGER, },
+});
+
+module.exports.add = async (data) => await User.create(data)
+module.exports.del = async (id) => await User.destroy({ where: { id } })
+
+module.exports.update = async (data) => {
+    let newUser = {...data}
+    delete newUser['id']
+    return await User.update({ ...newUser }, {
+        where: { id: data.id }
+    })
+}
+
+module.exports.find = async (condition) => {
+    if (Object.keys(condition).length) {
+        return await User.findAll({ where: { ...condition } })
+    } else {        
+        return await User.findAll();
+    }
+}
+```
+### 控制层
+现在要通 **修改** 过路由，把视图和 module 结合起来。
+```javascript
+// router/index.js
+// 引入
+const UserMudule = require('../modules/user')
+
+// 修改路由：增加
+router.post('/user/create', async (ctx) => {
+    const {
+        username, pwd, phone, age, gender
+     } = ctx.request.body
+     await UserMudule.add({
+        username, pwd, phone, age, gender
+     })
+    ctx.redirect('/')
+})
+// 修改路由：首页，查询所有用户
+router.get('/', async ctx => {
+    let users = await UserMudule.find(ctx.query)
+    await ctx.render('index', { title: 'node + mysql ', users });
+});
+```
+
+![]()
+
+接下来实现修改和删除的代码
+
+```javascript
+// router/index.js
+// 修改路由：delete
+router.get('/user/del/:id', async ctx => {
+    await UserMudule.del(ctx.params.id)
+    ctx.redirect('/')
+})
+
+// 修改路由：update
+router.get('/user/edit', async ctx => {
+    const codition = { id: ctx.query.id }
+    // 修改前先查询出 User 对象
+    let user = await UserMudule.find(codition)
+    await ctx.render('edit', { title: '修改用户', method: 'edit', user: user[0] })
+})
+
+// 修改路由：update
+router.post('/user/edit', async ctx => {
+    const {
+        username, pwd, phone, age, gender, id
+    } = ctx.request.body
+    //  接受参数，执行修改
+    await UserMudule.update({
+    id, username, pwd, phone, age, gender
+    })
+    ctx.redirect('/')
+})
+```
+### 总结
+### 后记，联系我

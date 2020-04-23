@@ -10,7 +10,7 @@
     <h1>
         <%= title %> <small><a href="/">返回首页</a></small>
     </h1>
-    <form action="/user/edit" method="POST" >
+    <form action="/user/edit" method="POST" AUTOCOMPLETE="OFF" >
         <input value="<%= user.id %>" name="id" type="hidden" />
         <fieldset>
             <label>username</label>
