@@ -1,8 +1,10 @@
 # koa+mysql实现增删改查-全栈之路（001）
 
-以前很少写文章。从今天开始我要挑战一下自己，连续输出100篇技术类文章。这100篇文章我尽量以实战案例为主。
+> Date: 2020-4-23
 
-如果你觉得本文还不错，记得关注或者给个 star，你们的赞和star是我编写更多更精彩文章的动力！
+以前很少写文章，从今天开始我要挑战一下自己，连续输出100篇技术类文章。这100篇文章我尽量以实战案例为主。
+
+如果你觉得本文还不错，记得关注或者给个 star，你们的赞和 star 是我编写更多更精彩文章的动力！
 [GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
 
 ## 本文重点内容
@@ -20,7 +22,6 @@
 
 ```javascript
 // 使用 sequelize 代理数据库操作
-
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const config = require('./config')
 
@@ -69,7 +70,7 @@ sequelize.sync() // 生成数据表
     $ npm i -s ejs sequelize mysql2
 
 > 各个库的版本号为：
-@koa/router: ^9.0.0, better-npm-run: ^0.1.1，ejs: ^3.0.2，koa: ^2.11.0，koa-views：^6.2.1，sequelize：^5.21.6，koa-bodyparser：^4.3.0，koa-static：^5.0.0，mysql2：^2.1.0，nodemon：^2.0.3
+@koa/router: 9.0.0, better-npm-run: 0.1.1，ejs: 3.0.2，koa: 2.11.0，koa-views：6.2.1，sequelize：5.21.6，koa-bodyparser：4.3.0，koa-static：5.0.0，mysql2：2.1.0，nodemon：2.0.3
 
 添加 npm scripts 到 package.json：
 
@@ -115,8 +116,10 @@ app.listen(3000, () => {
     console.log('server is running', new Date());
 });
 ```
-    让代码跑起来
+让代码跑起来
+
     $ npm start
+
 新建 views 目录结构
 ```
   demo_001
@@ -325,8 +328,8 @@ app.use(indexRouter.routes(), indexRouter.allowedMethods());
 
 到此为止，页面已经可以访问了
 
-![查询页面](http://xinglong.tech/access/001/001_微信截图_20200423173714.png)
 ![新增页面](http://xinglong.tech/access/001/001_微信图片_20200423173813.png)
+![查询页面](http://xinglong.tech/access/001/001_微信截图_20200423173714.png)
 
 ## 实现 module 层
 
@@ -515,5 +518,5 @@ router.post('/user/edit', async ctx => {
 这篇文章我花了6个小时，写代码，录gif 脖子和胳膊都酸了~~
 希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
 
-![微信](http://xinglong.tech/access/001/wechart.jpg)
-![支付宝](http://xinglong.tech/access/001/zhifubao.jpg)
+![微信](http://xinglong.tech/access/wechart.jpg)
+![支付宝](http://xinglong.tech/access/zhifubao.jpg)

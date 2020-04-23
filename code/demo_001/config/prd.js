@@ -1,6 +1,6 @@
 module.exports = {
     db: {
-        host: '148.70.78.66',
+        host: '000.000.000.000',
         dbName: 'test',
         username: 'xinglong.shi',
         password: 'guzhan321'
