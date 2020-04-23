@@ -16,6 +16,6 @@ app.use(views(path.join(__dirname, './views'), { extension: 'ejs' }));
 
 app.use(indexRouter.routes(), indexRouter.allowedMethods());
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('server is running', new Date());
 });
