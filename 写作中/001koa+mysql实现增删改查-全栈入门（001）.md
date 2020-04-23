@@ -91,7 +91,7 @@ sequelize.sync() // 生成数据表
         "env": {
           "NODE_ENV": "production"
         },
-        "command": "pm2 start app.js"
+        "command": "pm2 start app.js -n demo_001"
       }
     },
 ```
@@ -504,6 +504,7 @@ router.post('/user/edit', async ctx => {
 ```
 
 来，测试一下！
+
 ![新增和查询](https://xinglong.tech/access/001/001_添加，查询.gif)
 
 ![修改和删除](https://xinglong.tech/access/001/001_修改，删除.gif)

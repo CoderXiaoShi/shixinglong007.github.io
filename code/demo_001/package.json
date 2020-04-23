@@ -19,7 +19,7 @@
       "env": {
         "NODE_ENV": "production"
       },
-      "command": "pm2 start app.js"
+      "command": "pm2 start app.js -n demo_001"
     }
   },
   "keywords": [],
