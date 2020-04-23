@@ -3,7 +3,7 @@
 以前很少写文章。从今天开始我要挑战一下自己，连续输出100篇技术类文章。这100篇文章我尽量以实战案例为主。
 
 如果你觉得本文还不错，记得关注或者给个 star，你们的赞和star是我编写更多更精彩文章的动力！
-[GitHub 地址](https://github.com/shixinglong007)
+[GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
 
 ## 本文重点内容
 * 从 0 到 1 集成 node + mysql + ejs 用户管理系统
@@ -500,5 +500,19 @@ router.post('/user/edit', async ctx => {
     ctx.redirect('/')
 })
 ```
+
+来，测试一下！
+![新增和查询](https://xinglong.tech/access/001/001_添加，查询.gif)
+![修改和删除](https://xinglong.tech/access/001/001_修改，删除.gif)
 ### 总结
-### 后记，联系我
+
+  到此你已经掌握了简单的 nodejs 服务器开发，下一篇文章我继续带你一步步的教你如何上线一个 nodejs 项目
+
+  所以，如果你看完真觉得不错，那就给发 star 吧！你的赞和 star 是我编写更多精彩文章的动力[GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
+
+### 后记
+
+这篇文章我花了6个小时，写代码，录gif 脖子和胳膊都酸了~~
+希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
+
+
