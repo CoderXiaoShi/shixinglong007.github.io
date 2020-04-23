@@ -506,7 +506,7 @@ router.post('/user/edit', async ctx => {
 ![修改和删除](https://xinglong.tech/access/001/001_修改，删除.gif)
 ### 总结
 
-  到此你已经掌握了简单的 nodejs 服务器开发，下一篇文章我继续带你一步步的教你如何上线一个 nodejs 项目
+  到此你已经掌握了简单的 nodejs 服务器开发，下一篇文章我继续带你一步步的**上线**一个 nodejs 项目
 
   所以，如果你看完真觉得不错，那就给发 star 吧！你的赞和 star 是我编写更多精彩文章的动力[GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
 
@@ -515,4 +515,5 @@ router.post('/user/edit', async ctx => {
 这篇文章我花了6个小时，写代码，录gif 脖子和胳膊都酸了~~
 希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
 
-
+![微信](http://xinglong.tech/access/001/wechart.jpg)
+![支付宝](http://xinglong.tech/access/001/zhifubao.jpg)
