@@ -321,8 +321,9 @@ app.use(indexRouter.routes(), indexRouter.allowedMethods());
 
 看到这两个页面说明已经成功了
 
-![查询页面](./access/微信图片_20200423173813.png)
-![新增页面](./access/微信截图_20200423173714.png)
+![查询页面](http://xinglong.tech/access/001_微信截图_20200423173714.png)
+![新增页面](http://xinglong.tech/access/001_微信图片_20200423173813.png)
+
 
 ## 实现 module 层
 
