@@ -11,10 +11,9 @@
 * 熟悉 MVC 开发模式
 
 ## 成品演示
-- 线上地址
-- xxx
+- [线上地址](http://demo_001.xinglong.tech/)
 ### 关键技术点
-        
+
 - 1.1 数据库操作
 - 1.2 MVC模式是什么？
 > 1.1 数据库操作
@@ -503,6 +502,7 @@ router.post('/user/edit', async ctx => {
 
 来，测试一下！
 ![新增和查询](https://xinglong.tech/access/001/001_添加，查询.gif)
+
 ![修改和删除](https://xinglong.tech/access/001/001_修改，删除.gif)
 ### 总结
 
