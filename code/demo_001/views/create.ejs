@@ -1,0 +1,39 @@
+<% include('./header.ejs') %>
+    <style>
+        label{
+            width: 80px;
+            display: inline-block;
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+    <h1>
+        <%= title %> <small><a href="/">返回首页</a></small>
+    </h1>
+    <form action="/user/create" method="POST" >
+        <fieldset>
+            <label>username</label>
+            <input value="" name="username" />
+        </fieldset>
+        <fieldset>
+            <label>pwd</label>
+            <input value="" name="pwd" />
+        </fieldset>
+        <fieldset>
+            <label>phone</label>
+            <input value="" name="phone" />
+        </fieldset>
+        <fieldset>
+            <label>age</label>
+            <input value="" name="age" />
+        </fieldset>
+        <fieldset>
+            <label>gender</label>
+            <input value="" name="gender" />
+        </fieldset>
+        <fieldset>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

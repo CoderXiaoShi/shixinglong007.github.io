@@ -1,0 +1,41 @@
+<% include('./header.ejs') %>
+    <h1>
+        <%= title %>
+        <small>实现增删改查</small>
+    </h1>
+    <a href="/user/create">添加用户</a>
+    <style>
+        table{
+            border-color: #ccc;
+        }
+        table td, th{
+            background: #fff;
+        }
+    </style>
+    <table cellspacing="1"  cellpadding="15" bgcolor="#000"  >
+        <thead>
+            <tr>
+                <th>username</th>
+                <th>pwd</th>
+                <th>phone</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <% for (const user of users) { %>
+            <tr>
+                <td><%= user.username %></td>
+                <td><%= user.pwd %></td>
+                <td><%= user.phone %></td>
+                <td><%= user.age %></td>
+                <td><%= user.gender %></td>
+                <td>
+                    <a href="/user/edit?id=<%= user.id %>">修改</a>
+                    <a href="/user/del?id=<%= user.id %>">删除</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
