@@ -326,10 +326,8 @@ app.use(indexRouter.routes(), indexRouter.allowedMethods());
 
 ## 实现 module 层
 
-
-
 连接数据库
-创建module
+创建 module
 联调 曾
 联调 查
 联调 改
