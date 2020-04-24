@@ -11,14 +11,22 @@
 ## 先看效果
     
 [在线演示：上一篇文章的案例](http://demo_01.catok.top/)
-    
-## 关键技术点 以及解法
+
+# 目录
+网速越快，前端越忙
+
+- 1. <a href="#关键技术点">关键技术</a>
+- 2. <a href="#开始动手">开始动手</a>
+- 3. 总结
+
+
+## <a id="关键技术点">关键技术点</a>
     1. 数据库 nginx 如何安装
 
     2. 软件安装：安装 宝塔(这一步没装好的私聊我wx: guzhan321) 宝塔一键安装 mysql, nginx, 
     4. 命令行安装 nodejs pm2
 
-## 开始动手
+## <a id="开始动手">开始动手</a>
     安装 nginx, mysql, 建库，建表
     1. 
 
@@ -34,12 +42,18 @@
     Nginx 官网：https://www.mysql.com/
 
 ## 后记
-    
+
     联系我：
-        GitHub
-        个人微信，
-        公众号，
-    打赏
+        个人微信: guzhan321
+        [GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
+        公众号: 石兴龙
+    
+这篇文章我花了6个小时，写代码，录gif 脖子和胳膊都酸了~~
+希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
+
+![微信](http://xinglong.tech/access/wechart.jpg)
+![支付宝](http://xinglong.tech/access/zhifubao.jpg)
+
 
 > 资源分享：
 
