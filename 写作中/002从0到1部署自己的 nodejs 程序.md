@@ -3,17 +3,23 @@
 
     如果你也有自己的小网站，自己的域名。请让它跑起来，让它穿梭在互联网中，陌生人的微信，抖音，浏览器在这巨大的信息流中留下你的足迹。
 
-    今天我教你上线自己的网站
+    接下来，我教你上线自己的网站
 
     如果看完这篇文章，你的网站也上线了。请你联系我，让我一起和你分享这份喜悦。
     wx: guzhan321
 
 ## 先看效果
-    
+
 [在线演示](http://demo_01.catok.top/)
 
 # 目录
-网速越快，前端越忙
+ 花半秒钟就看透事物本质的人，
+  和花一辈子都看不清的人，
+  注定是截然不同的命运。
+
+长按二维码关注，一起洞察商业本质
+
+
 
 1. <a href="#关键技术点">关键技术</a>
 2. <a href="#开始动手">开始动手</a>
@@ -22,9 +28,11 @@
 
 ## <a id="关键技术点">关键技术点</a>
     1. 数据库 nginx 如何安装
+    2. 域名怎么注册
 
-    2. 软件安装：安装 宝塔(这一步没装好的私聊我wx: guzhan321) 宝塔一键安装 mysql, nginx, 
-    4. 命令行安装 nodejs pm2
+> 数据库 nginx 如何安装
+
+    这里推荐 宝塔 linxu 管理工具 
 
 ## <a id="开始动手">开始动手</a>
     安装 nginx, mysql, 建库，建表
@@ -43,20 +51,22 @@
 
 ## 后记
 
-    联系我：
-        个人微信: guzhan321
-        [GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
-        公众号: 石兴龙
-    
-这篇文章我花了6个小时，写代码，录gif 脖子和胳膊都酸了~~
-希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
+    一边实战一边查阅文档是一个很不错的学习方法
+
+> 联系我
+- 个人微信: guzhan321
+- ~[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
+- 个人公众号: 搜索“石兴龙”
+
+> 资源分享：
+-  Xshell 免费破解版 链接: https://pan.baidu.com/s/1S_tG3r90EnvGdxuY0TrnDw 提取码: 5vgq
+- Navicat 免费破解版 链接: https://pan.baidu.com/s/1cj0WV_pmEvklt9OSl4lu1Q 提取码: qxfj 
+
+
+#
+
+如果这篇文章让你有所收获的话，希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
 
 ![微信](http://xinglong.tech/access/wechart.jpg)
 ![支付宝](http://xinglong.tech/access/zhifubao.jpg)
 
-
-> 资源分享：
-
--  Xshell 免费破解版 链接: https://pan.baidu.com/s/1S_tG3r90EnvGdxuY0TrnDw 提取码: 5vgq
-
-- Navicat 免费破解版 链接: https://pan.baidu.com/s/1cj0WV_pmEvklt9OSl4lu1Q 提取码: qxfj 
