@@ -1,6 +1,3 @@
 # 石兴龙
-1
-![鼓励自己](http://xinglong.tech/access/dva.jpg)
-2
 
-3
+![找到我]](http://xinglong.tech/access/chatcode.jpg)
