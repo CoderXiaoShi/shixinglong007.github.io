@@ -1,4 +1,4 @@
-# 实战：一步步教你部署自己的 Nodejs 应用
+# 实战：一步步教你部署自己的Nodejs应用
 > Date: 2020-4-24
 
     如果你也有自己的小网站，自己的域名。请让它跑起来，让它穿梭在互联网中，陌生人的微信，抖音，浏览器在这巨大的信息流中留下你的足迹。
@@ -13,49 +13,125 @@
 [在线演示](http://demo_01.catok.top/)
 
 # 目录
- 花半秒钟就看透事物本质的人，
-  和花一辈子都看不清的人，
-  注定是截然不同的命运。
-
-长按二维码关注，一起洞察商业本质
-
-
 
 1. <a href="#关键技术点">关键技术</a>
 2. <a href="#开始动手">开始动手</a>
+    1. <a href="#购买域名，虚拟机">购买域名，虚拟机</a>
+    2. <a href="#安装生产环境套件">安装生产环境套件</a>
+    3. <a href="#启动自己的项目">启动自己的项目</a>
+    4. <a href="#编写 nginx 配置">编写 nginx 配置</a>
+    5. <a href="#重启 nginx 上线完毕">重启 nginx 上线完毕</a>
+    6. <a href="#配置域名映射">配置域名映射</a>
 3. <a href="#总结">总结</a>
 4. <a href="#后记">后记</a>
 
 ## <a id="关键技术点">关键技术点</a>
-    1. 数据库 nginx 如何安装
-    2. 域名怎么注册
+    1. 怎样通过域名访问到我的主机（配置域名映射）
+    2. mysql nginx nodejs 等 如何安装
 
-> 数据库 nginx 如何安装
+> 怎样通过域名访问到我的主机
 
-    这里推荐 宝塔 linxu 管理工具 
+    其实这是最简单的一步啦，购买域名的厂商都会有一个域名解析的页面
+
+    比如阿里云的
+
+#    图片: 阿里云配置域名解析
+
+> 服务器套件 mysql nginx nodejs 等 如何安装
+
+    最简单的办法，安装 宝塔 linxu 面板（图形工具）
+    官网：https://www.bt.cn/download/linux.html
+
+    建议不要重度依赖宝塔，自己还是要系统的学习 linux 知识，然后才能更好的使用工具。我之后也会出一些 linux 的文章。
 
 ## <a id="开始动手">开始动手</a>
-    安装 nginx, mysql, 建库，建表
-    1. 
+
+1. <a id="购买域名，虚拟机">购买域名，虚拟机</a>
+
+    [域名] 我推荐 阿里云，阿里云是国内最大的计算提供商。自己的域名我建议不要买 .com 的。比如我这个 xinglong.tech 10年才199元。
+
+#    图片： 10年 199
+
+    [虚拟机]就是一台虚拟的电脑，云计算服务商从一台超大型计算机中虚拟一台主机给你，国内的都会给你分配 公网 ip, 我推荐买最低配的1核1GB内存，腾讯云 新用户首年88元。
+
+#    图片：首年88
+
+2. <a id="安装生产环境套件">安装生产环境套件</a>
+    1. 安装 宝塔 Linux面板 [安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
+    2. 图形界面安装各个软件
+
+#   图片：图形界面安装各个软件
+
+    搜索：nginx
+    搜索：mysql
+    搜索：pm2
+
+    3. 在自己电脑上安装 配套 windos 软件，Xshell, Navicat 我这里都有免费的，想要的联系我 wx: guzhan321
+        - Xshell: 连接并操作你的虚机机
+        - Navicat: 连接你服务器的数据库
+
+3. <a id="启动自己的项目">启动自己的项目</a>
+
+    启动自己的项目：
+        代码上传到 /opt 目录下, 并启动 prd 环境
+        /opt 目录一般都是存放产品代码的
+
+4. <a id="编写 nginx 配置">编写 nginx 配置</a>
+
+    来，上手最简单的 nginx 配置
+
+    1. 在你电脑上新建文件 demo.conf
+    2. 打开这个文件写入
+        ```
+        server  {
+            listen 80;
+            server_name 你的域名;
+
+            location / {
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $host;
+
+                proxy_pass http://localhost:你项目的启动端口/;
+            }
+        }
+        ```
+    3. 把这个文件上传到你的虚拟机的 /www/server/panel/vhost/nginx/ 目录下
 
 
+5. <a id="重启 nginx 上线完毕">重启 nginx 上线完毕</a>
 
-5. 结束，时的 gif 图
+    4. 重启 nginx 。我还是要建议你学习 nginx命令，要多多学习 nginx 知识不要对图形界面产生依赖
+
+# 图片：重启 nginx
+
+    nginx 常用命令
+
+    $ nginx            #启动
+    $ nginx -t         #测试所有的 nginx　配置是否正确
+    $ nginx -s reload　#重启 nginx
+    $ nginx -s stop    #停止 nginx
+
+6. 配置域名映射
+
+# 图片 阿里云域名映射
+
 ## 总结
 
     我们安装程序的时候严重依赖了宝塔，但是这是不好的习惯。我还是建议你多访问各大软件的官网，看看官网的安装方法以及文档
 
     Nodejs 官网：http://nodejs.cn/
-    Mysql 官网：
-    Nginx 官网：https://www.mysql.com/
+    Mysql 官网：https://www.mysql.com/
+    Nginx 官网：http://nginx.org/
 
 ## 后记
 
-    一边实战一边查阅文档是一个很不错的学习方法
+    一边实战一边查阅文档是一个很不错的学习方法。借此机会，打开这些工具的官方文档，他们的文档就是最好的学习资料。
 
 > 联系我
 - 个人微信: guzhan321
-- ~[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
+- [GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
 - 个人公众号: 搜索“石兴龙”
 
 > 资源分享：
@@ -63,10 +139,11 @@
 - Navicat 免费破解版 链接: https://pan.baidu.com/s/1cj0WV_pmEvklt9OSl4lu1Q 提取码: qxfj 
 
 
-#
+如果你看完了我的文章，并且感觉有所收获的话，
 
-如果这篇文章让你有所收获的话，希望小伙伴们给我一点点打赏，鼓励我写成更多干货文章
+我希望能给我一点点打赏
+
+让我知道你在看。我会持续输出更多优质内容
 
 ![微信](http://xinglong.tech/access/wechart.jpg)
 ![支付宝](http://xinglong.tech/access/zhifubao.jpg)
-
