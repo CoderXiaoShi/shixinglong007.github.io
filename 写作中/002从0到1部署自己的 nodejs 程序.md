@@ -14,26 +14,24 @@
 
 # 目录
 
-1. <a href="#关键技术点">关键技术</a>
+1. <a href="#关键技术点">关键技术点</a>
 2. <a href="#开始动手">开始动手</a>
     1. <a href="#购买域名，虚拟机">购买域名，虚拟机</a>
     2. <a href="#安装生产环境套件">安装生产环境套件</a>
     3. <a href="#启动自己的项目">启动自己的项目</a>
     4. <a href="#编写 nginx 配置">编写 nginx 配置</a>
-    5. <a href="#重启 nginx 上线完毕">重启 nginx 上线完毕</a>
+    5. <a href="#重启 nginx">重启 nginx</a>
     6. <a href="#配置域名映射">配置域名映射</a>
 3. <a href="#总结">总结</a>
 4. <a href="#后记">后记</a>
 
 ## <a id="关键技术点">关键技术点</a>
     1. 怎样通过域名访问到我的主机（配置域名DNS解析）
-    2. mysql nginx nodejs 等 如何安装
+    2. 服务器套件 mysql nginx nodejs 等 如何安装
 
 > 怎样通过域名访问到我的主机
 
-    其实这是最简单的一步啦，购买域名的厂商都会有一个域名解析的页面
-
-    比如阿里云的 云解析DNS
+    其实这是最简单的一步啦，购买域名的厂商都会有一个域名解析的页面比如阿里云的 云解析DNS
 
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_01.png)
 
@@ -48,11 +46,11 @@
 
 1. <a id="购买域名，虚拟机">购买域名，虚拟机</a>
 
-    [域名] 我推荐 阿里云，阿里云是国内最大的计算提供商。自己的域名我建议不要买 .com 的。比如我这个 xinglong.tech 10年才199元。
+    【域名】 我推荐 阿里云，阿里云是国内最大的云计算提供商。自己的域名我建议不要买 .com 的。比如我这个 xinglong.tech 10年才199元。
 
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_02.png)
 
-    [虚拟机]就是一台虚拟的电脑，云计算服务商从一台超大型计算机中虚拟一台主机给你，国内的都会给你分配 公网 ip, 我推荐买最低配的1核1GB内存，腾讯云 新用户首年99元。
+    【虚拟机】就是一台虚拟的电脑，云计算服务商从一台超大型计算机中虚拟一台主机给你，国内云计算厂商的都会给你分配公网IP, 我推荐买最低配的1核1GB内存，腾讯云 新用户首年99元。
 
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_03.png)
 
@@ -62,19 +60,9 @@
 
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_07.png)
 
-    搜索：nginx
-    搜索：mysql
-    搜索：pm2
-
-    3. 在自己电脑上安装 配套 windos 软件，Xshell, Navicat 我这里都有免费的，想要的联系我 wx: guzhan321
-        - Xshell: 连接并操作你的虚机机
-        - Navicat: 连接你服务器的数据库
-
 3. <a id="启动自己的项目">启动自己的项目</a>
 
-    启动自己的项目：
-        代码上传到 /opt 目录下, 并启动 prd 环境
-        /opt 目录一般都是存放产品代码的
+    大部分项目启动的方法都不太一样。你自己的代码你当然是知道怎么启动啦。不过要注意 配置 production 环境
 
 4. <a id="编写 nginx 配置">编写 nginx 配置</a>
 
@@ -85,7 +73,7 @@
         ```
         server  {
             listen 80;
-            server_name 你的域名;
+            server_name 你的域名; # 注意！！这里需要替换掉
 
             location / {
                 proxy_set_header Upgrade $http_upgrade;
@@ -93,20 +81,21 @@
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header Host $host;
 
-                proxy_pass http://localhost:你项目的启动端口/;
+                proxy_pass http://localhost:你项目的启动端口/; 
+                # 注意！！这里需要替换掉
             }
         }
         ```
     3. 把这个文件上传到你的虚拟机的 /www/server/panel/vhost/nginx/ 目录下
 
 
-5. <a id="重启 nginx 上线完毕">重启 nginx 上线完毕</a>
+5. <a id="重启 nginx">重启 nginx</a>
 
-    4. 重启 nginx 。我还是要建议你学习 nginx命令，要多多学习 nginx 知识不要对图形界面产生依赖
+    4. 重启 nginx 使用宝塔图形界面。我还是要建议你学习 nginx 命令，要多多学习 nginx 知识不要对图形界面产生依赖
 
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_06.png)
 
-    使用 ngixn 命令重启
+    使用 ngixn 常用命令
 
     $ nginx            #启动
     $ nginx -t         #测试所有的 nginx　配置是否正确
@@ -115,12 +104,16 @@
 
 6. 配置域名映射
 
+这是最简单的一步。
+
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_04.png)
 ![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_05.png)
 
+    配置好以后在浏览器里输入你的域名试试看，应该就可以访问到你的网站了。
+
 ## 总结
 
-    这是最简单的上线过程一点都不难，如果你遇到困难了联系我 wx: guzhan321
+    这是最简单的上线过程，如果你遇到困难了记得联系我 wx: guzhan321
 
     我们安装程序的时候严重依赖了宝塔，但是这是不好的习惯。我还是建议你多访问各大软件的官网，看看官网的安装方法以及文档
 
@@ -142,7 +135,7 @@
 - Navicat 免费破解版 链接: https://pan.baidu.com/s/1cj0WV_pmEvklt9OSl4lu1Q 提取码: qxfj 
 
 
-如果你看完了我的文章，并且感觉有所收获的话，
+如果你看完了我的文章，并且有所收获的话，
 
 我希望能给我一点点打赏
 
