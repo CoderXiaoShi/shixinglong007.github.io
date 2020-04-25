@@ -35,7 +35,7 @@
 
     比如阿里云的 云解析DNS
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_01.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_01.png)
 
 > 服务器套件 mysql nginx nodejs 等 如何安装
 
@@ -50,17 +50,17 @@
 
     [域名] 我推荐 阿里云，阿里云是国内最大的计算提供商。自己的域名我建议不要买 .com 的。比如我这个 xinglong.tech 10年才199元。
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_02.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_02.png)
 
     [虚拟机]就是一台虚拟的电脑，云计算服务商从一台超大型计算机中虚拟一台主机给你，国内的都会给你分配 公网 ip, 我推荐买最低配的1核1GB内存，腾讯云 新用户首年99元。
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_03.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_03.png)
 
 2. <a id="安装生产环境套件">安装生产环境套件</a>
     1. 安装 宝塔 Linux面板 [安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
     2. 图形界面安装各个软件
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_07.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_07.png)
 
     搜索：nginx
     搜索：mysql
@@ -104,7 +104,7 @@
 
     4. 重启 nginx 。我还是要建议你学习 nginx命令，要多多学习 nginx 知识不要对图形界面产生依赖
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_06.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_06.png)
 
     使用 ngixn 命令重启
 
@@ -115,8 +115,8 @@
 
 6. 配置域名映射
 
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_04.jpg)
-![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_05.jpg)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_04.png)
+![阿里云的 云解析DNS](https://xinglong.tech/access/002/demo_002_05.png)
 
 ## 总结
 
@@ -148,5 +148,5 @@
 
 让我知道你在看。我会持续输出更多优质内容
 
-![微信](http://xinglong.tech/access/wechart.jpg)
-![支付宝](http://xinglong.tech/access/zhifubao.jpg)
+![微信](https://xinglong.tech/access/wechart.jpg)
+![支付宝](https://xinglong.tech/access/zhifubao.jpg)
