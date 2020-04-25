@@ -60,7 +60,7 @@
     1. 安装 宝塔 Linux面板 [安装教程](https://www.bt.cn/bbs/thread-19376-1-1.html)
     2. 图形界面安装各个软件
 
-#   图片：图形界面安装各个软件
+![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_07.jpg)
 
     搜索：nginx
     搜索：mysql
@@ -104,9 +104,9 @@
 
     4. 重启 nginx 。我还是要建议你学习 nginx命令，要多多学习 nginx 知识不要对图形界面产生依赖
 
-# 图片：重启 nginx
+![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_06.jpg)
 
-    nginx 常用命令
+    使用 ngixn 命令重启
 
     $ nginx            #启动
     $ nginx -t         #测试所有的 nginx　配置是否正确
@@ -115,7 +115,8 @@
 
 6. 配置域名映射
 
-# 图片 阿里云域名映射
+![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_04.jpg)
+![阿里云的 云解析DNS](http://xinglong.tech/access/002/demo_002_05.jpg)
 
 ## 总结
 
