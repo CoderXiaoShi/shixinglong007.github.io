@@ -102,7 +102,7 @@
     $ nginx -s reload　#重启 nginx
     $ nginx -s stop    #停止 nginx
 
-6. 配置域名映射
+6. <a id="配置域名映射">配置域名映射</a>
 
 这是最简单的一步。
 
