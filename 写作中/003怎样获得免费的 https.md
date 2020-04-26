@@ -3,40 +3,61 @@
 
 不适用 https 加密的网站，基本上就等于在裸奔。
 
-我教你这个方法炒鸡简单，小学生都会
+来，开始开始动手做
 
-## 第一步：打开这个网站
+我的系统是 CentOS6
 
-全中文的：[https://freessl.cn/](https://freessl.cn/)
+## 第一步：安装Certbot
+Certbot可以用于管理(申请、更新、配置、撤销和删除等)Let's Encrypt证书。这里安装的是带nginx插件的certbot：
 
-## 第二步：输入你的域名
+wget https://dl.eff.org/certbot-auto
+sudo mv certbot-auto /usr/local/bin/certbot-auto
+sudo chown root /usr/local/bin/certbot-auto
+sudo chmod 0755 /usr/local/bin/certbot-auto
 
-有两种方式，双域名和多域名统配
+## 第二步：拿到证书
+这条命令只是拿到证书，剩下的步骤手动完成
 
-   1. www.xxx.com
+    $ /usr/local/bin/certbot-auto certonly --standalone --email lpjustdoit@163.com --agree-tos -d demo_01.xinglong.tech -d demo_02.xinglong.tech -d demo_03.xinglong.tech
 
-这种是双域名：支持 www.xxx.com，xxx.com 这两种写法
+查看证书
 
-   2. demo.xxx.com, abc.xxx.com
+    $ ls /etc/letsencrypt/live/
 
-![](https://xinglong.tech/access/003/demo_03_02.png)
+在nginx配置证书
 
-这种是多域名统配：就是二级域名的意思，可以申请很多个。没有特殊需求的话双域名就够用了。
+    ssl_certificate /etc/letsencrypt/live/cdw.me/fullchain.pem;#证书位置
+    ssl_certificate_key /etc/letsencrypt/live/cdw.me/privkey.pem;# 私钥位置
 
-第三步：开始生成
+启动nginx
 
-提供你的邮箱（证书到期前发邮件提醒你），并选择一键申请。需要下载一个 keyManager 的软件
+## 设置自动续订
 
-![](https://xinglong.tech/access/003/demo_03_03.png)
-![](https://xinglong.tech/access/003/demo_03_04.png)
+```
+编写更新脚本renew-cert.sh
 
+#!/bin/bash
 
-成品展示
+# 停止nginx
+service nginx stop
 
-内容大纲
-步骤
-参考资料
-总结
-后记
-资源分享
-版权声明
+# 续签
+# --force-renew 强制更新
+/root/certbot-auto renew --force-renew
+
+# 启动nginx
+service nginx start
+a+x renew-cert.sh
+
+自动更新https证书 在crontab 服务中正价 定时任务
+
+#每两个月 自动 更新 证书
+* * * */2 * /root/renew-cert.sh >> /root/crontab.log 2>&1
+
+Let’s Encrypt 生成的免费证书为3个月时间，但是我们可以无限次续签证书
+```
+
+> 作者：[石兴龙](https://xinglong.tech/)<br/>
+> 来源：[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)<br/>
+>  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/>
+>  本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
