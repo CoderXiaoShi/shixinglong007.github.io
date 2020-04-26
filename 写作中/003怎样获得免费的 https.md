@@ -57,6 +57,8 @@ a+x renew-cert.sh
 Let’s Encrypt 生成的免费证书为3个月时间，但是我们可以无限次续签证书
 ```
 
+参考：https://certbot.eff.org/lets-encrypt/centos6-nginx
+
 > 作者：[石兴龙](https://xinglong.tech/)<br/>
 > 来源：[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)<br/>
 >  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/>
