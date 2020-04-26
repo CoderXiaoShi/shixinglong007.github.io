@@ -13,11 +13,11 @@
 * 熟悉 MVC 开发模式
 
 ## 成品演示
-- [线上地址](http://demo_01.catok.top/)
+- [在线地址](http://demo_01.catok.top/)
 ### 关键技术点
 
 - 1.1 数据库操作
-- 1.2 MVC模式是什么？
+- 1.2 MVC 模式是什么？
 > 1.1 数据库操作
 
 ```javascript
@@ -61,6 +61,7 @@ sequelize.sync() // 生成数据表
 
 ## 开始撸代码
 
+### 第一步 初始化目录
 先来初始化下目录结构：
 
     $ mkdir demo_001 && cd demo_001
@@ -95,8 +96,8 @@ sequelize.sync() // 生成数据表
       }
     },
 ```
+### 第二步 实现 view 层
 
-### 实现 view 层
 新建 app.js 
 ```javascript
 // app.js 代码
@@ -116,7 +117,7 @@ app.listen(3000, () => {
     console.log('server is running', new Date());
 });
 ```
-让代码跑起来
+让代码跑起来，之后修改代码不用频繁的重启服务。因为开发环境是用 nodemon 托管的
 
     $ npm start
 
@@ -331,7 +332,7 @@ app.use(indexRouter.routes(), indexRouter.allowedMethods());
 ![新增页面](http://xinglong.tech/access/001/001_微信图片_20200423173813.png)
 ![查询页面](http://xinglong.tech/access/001/001_微信截图_20200423173714.png)
 
-## 实现 module 层
+### 第三步 实现 module 层
 
 新建 module 目录结构
 ```
@@ -446,7 +447,7 @@ module.exports.find = async (condition) => {
     }
 }
 ```
-### 控制层
+### 第四步 控制层调度
 现在要通 **修改** 过路由，把视图和 module 结合起来。
 ```javascript
 // router/index.js
@@ -470,7 +471,7 @@ router.get('/', async ctx => {
 });
 ```
 
-![]()
+    此时已经实现了增加和查询，你可以测试一下这部分功能。
 
 接下来实现修改和删除的代码
 
@@ -512,7 +513,7 @@ router.post('/user/edit', async ctx => {
 
   到此你已经掌握了简单的 nodejs 服务器开发，下一篇文章我继续带你一步步的**上线**一个 nodejs 项目
 
-  所以，如果你看完真觉得不错，那就给发 star 吧！你的赞和 star 是我编写更多精彩文章的动力[GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
+  所以，如果你看完真觉得不错，那就给个 star 吧！你的赞和 star 是我编写更多精彩文章的动力[GitHub 地址](https://github.com/shixinglong007/shixinglong007.github.io)
 
 ### 后记
 
@@ -521,3 +522,8 @@ router.post('/user/edit', async ctx => {
 
 ![微信](http://xinglong.tech/access/wechart.jpg)
 ![支付宝](http://xinglong.tech/access/zhifubao.jpg)
+
+> 作者：[石兴龙](https://xinglong.tech/)<br/>
+> 来源：[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)<br/>
+>  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/>
+>  本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。

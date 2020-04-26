@@ -1,4 +1,4 @@
-# 免费 https 申请步骤
+# 免费 https 申请步骤，你必须知道
 ![](https://xinglong.tech/access/003/demo_03_01.jpg)
 
 不适用 https 加密的网站，基本上就等于在裸奔。
@@ -18,7 +18,7 @@ sudo chmod 0755 /usr/local/bin/certbot-auto
 ## 第二步：拿到证书
 这条命令只是拿到证书，剩下的步骤手动完成
 
-    $ /usr/local/bin/certbot-auto certonly --standalone --email lpjustdoit@163.com --agree-tos -d demo_01.xinglong.tech -d demo_02.xinglong.tech -d demo_03.xinglong.tech
+    $ /usr/local/bin/certbot-auto certonly --standalone --email 15021134415@163.com --agree-tos -d demo_01.xinglong.tech -d demo_02.xinglong.tech -d demo_03.xinglong.tech
 
 查看证书
 
@@ -31,7 +31,7 @@ sudo chmod 0755 /usr/local/bin/certbot-auto
 
 启动nginx
 
-## 设置自动续订
+## 第三步：设置自动续订
 
 ```
 编写更新脚本renew-cert.sh

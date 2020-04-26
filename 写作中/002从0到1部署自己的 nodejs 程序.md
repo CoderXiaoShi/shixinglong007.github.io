@@ -5,7 +5,7 @@
 
     接下来，我教你上线自己的网站
 
-    如果看完这篇文章，你的网站也上线了。请你联系我，让我一起和你分享这份喜悦。
+    如果看完这篇文章，你的网站也上线了。请你告诉我，让我一起和你分享这份喜悦。
     wx: guzhan321
 
 ## 先看效果
@@ -102,7 +102,7 @@
     $ nginx -s reload　#重启 nginx
     $ nginx -s stop    #停止 nginx
 
-6. 配置域名映射
+6. <a id="配置域名映射">配置域名映射</a>
 
 这是最简单的一步。
 
@@ -125,10 +125,8 @@
 
     一边实战一边查阅文档是一个很不错的学习方法。借此机会，打开这些工具的官方文档，他们的文档就是最好的学习资料。
 
-> 联系我
-- 个人微信: guzhan321
+> 抓到我
 - [GitHub](https://github.com/shixinglong007/shixinglong007.github.io)
-- 个人公众号: 搜索“石兴龙”
 
 > 资源分享：
 -  Xshell 免费破解版 链接: https://pan.baidu.com/s/1S_tG3r90EnvGdxuY0TrnDw 提取码: 5vgq
@@ -143,3 +141,10 @@
 
 ![微信](https://xinglong.tech/access/wechart.jpg)
 ![支付宝](https://xinglong.tech/access/zhifubao.jpg)
+
+我是[石兴龙](https://xinglong.tech/)，恭喜你你又读完了我的一篇文章。
+
+> 作者：[石兴龙](https://xinglong.tech/)<br/>
+> 来源：[GitHub](https://github.com/shixinglong007/shixinglong007.github.io)<br/>
+>  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/>
+>  本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
