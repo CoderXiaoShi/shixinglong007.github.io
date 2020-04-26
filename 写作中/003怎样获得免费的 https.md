@@ -1,5 +1,5 @@
 # 免费 https 申请步骤
-![](https://xinglong.tech/access/003/demo_003_01.jpeg)
+![](https://xinglong.tech/access/003/demo_03_01.jpeg)
 
 不适用 https 加密的网站，基本上就等于在裸奔。
 
