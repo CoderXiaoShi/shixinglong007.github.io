@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+
+<input class="phone" value="{{phone}}" placeholder="请输入手机号" />
+
+<view class="money" >
+  <view><button bindtap="pay" type="primary" data-money="0.01" >0.01</button></view>
+  <view><button bindtap="pay" type="primary" data-money="0.02" >0.02</button></view>
+  <view><button bindtap="pay" type="primary" data-money="0.03" >0.03</button></view>
+</view>
+<view class="money" >
+  <view><button bindtap="pay" type="primary" data-money="0.04" >0.04</button></view>
+  <view><button bindtap="pay" type="primary" data-money="0.05" >0.05</button></view>
+  <view><button bindtap="pay" type="primary" data-money="0.06" >0.06</button></view>
+</view>
+  <view>
+    这是一个测试版，并没有实际功能
+  </view>
+</view>
