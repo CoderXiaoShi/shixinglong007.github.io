@@ -1,0 +1,36 @@
+[
+  {
+    "name": "create",
+    "value": {
+      "action": "create",
+      "params": {
+        "title": "❤轻松点"
+      }
+    }
+  },
+  {
+    "name": "del",
+    "value": {
+      "action": "del",
+      "params": {
+        "_id": "5e847ab25eb41328005247824ec8f199"
+      }
+    }
+  },
+  {
+    "name": "update",
+    "value": {
+      "action": "update",
+      "params": {
+        "_id": "222",
+        "title": "❤轻松点-3"
+      }
+    }
+  },
+  {
+    "name": "select",
+    "value": {
+      "action": "select"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "create",
+    "value": {
+      "action": "create",
+      "params": {
+        "name": "奶茶1",
+        "description": "",
+        "imgs": [],
+        "price": "",
+        "selects": [],
+        "autherServices": []
+      }
+    }
+  },
+  {
+    "name": "del",
+    "value": {
+      "action": "create",
+      "params": {
+        "_id": "982133855eb5058d004aefe830375805",
+        "name": "奶茶1",
+        "description": "",
+        "imgs": [],
+        "price": "",
+        "selects": [],
+        "autherServices": []
+      }
+    }
+  },
+  {
+    "name": "update",
+    "value": {
+      "action": "update",
+      "params": {
+        "_id": "aa9f906d5eb50686005125200f1bcd98",
+        "name": "奶茶-2222",
+        "description": "",
+        "imgs": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "price": "",
+        "selects": [],
+        "autherServices": []
+      }
+    }
+  },
+  {
+    "name": "select",
+    "value": {
+      "action": "select",
+      "params": {}
+    }
+  }
+]

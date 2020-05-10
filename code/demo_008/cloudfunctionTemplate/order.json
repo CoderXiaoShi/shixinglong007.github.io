@@ -1,0 +1,61 @@
+[
+  {
+    "name": "create",
+    "value": {
+      "action": "create",
+      "params": {
+        "user": {},
+        "teaList": [
+          {
+            "name": "绿茶"
+          }
+        ],
+        "status": "支付",
+        "evaluate": {
+          "userId": "123",
+          "score": 5,
+          "text": "good"
+        }
+      }
+    }
+  },
+  {
+    "name": "del",
+    "value": {
+      "action": "del",
+      "params": {
+        "_id": "6af880a55eb50c7f00500ef64ecf394d"
+      }
+    }
+  },
+  {
+    "name": "update",
+    "value": {
+      "action": "update",
+      "params": {
+        "_id": "37e26adb5eb5186f004df0f2389f458a",
+        "user": {},
+        "teaList": [
+          {
+            "name": "绿茶----3333"
+          }
+        ],
+        "status": "支付",
+        "evaluate": {
+          "userId": "123",
+          "score": 5,
+          "text": "good"
+        }
+      }
+    }
+  },
+  {
+    "name": "select",
+    "value": {
+      "action": "select",
+      "params": {
+        "createDate": "2020-5-9"
+      }
+    }
+  }
+]

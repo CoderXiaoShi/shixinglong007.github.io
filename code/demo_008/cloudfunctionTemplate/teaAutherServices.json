@@ -1,0 +1,60 @@
+[
+  {
+    "name": "create",
+    "value": {
+      "action": "create",
+      "params": {
+        "title": "杯型",
+        "childs": [
+          {
+            "id": "1",
+            "title": "中杯",
+            "price": "18"
+          },
+          {
+            "id": "2",
+            "title": "大杯",
+            "price": "20"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "del",
+    "value": {
+      "action": "del",
+      "params": {
+        "_id": "05f2c36f5eb426620049ec7c49fb0376"
+      }
+    }
+  },
+  {
+    "name": "update",
+    "value": {
+      "action": "create",
+      "params": {
+        "title": "杯型",
+        "childs": [
+          {
+            "id": "1",
+            "title": "中杯",
+            "price": "18"
+          },
+          {
+            "id": "2",
+            "title": "大杯",
+            "price": "20"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "select",
+    "value": {
+      "action": "select",
+      "params": {}
+    }
+  }
+]

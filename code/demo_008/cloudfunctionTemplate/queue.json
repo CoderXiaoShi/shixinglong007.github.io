@@ -1,0 +1,18 @@
+[
+  {
+    "name": "enqueue",
+    "value": {
+      "action": "enqueue",
+      "params": {
+        "orderId": "1122"
+      }
+    }
+  },
+  {
+    "name": "dequeue",
+    "value": {
+      "action": "dequeue",
+      "params": {}
+    }
+  }
+]
